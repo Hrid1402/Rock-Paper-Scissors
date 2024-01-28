@@ -1,20 +1,46 @@
 const options = ["rock", "paper", "scissors"]
-let playerChoose = ""
-game();
+
+const rockBtn = document.querySelector('#Rock');
+const paperBtn = document.querySelector('#Paper');
+const scissorsBtn = document.querySelector('#Scissors');
+
+const result = document.querySelector("#result");
+
+let points = 0
+const pointsText = document.querySelector("#points");
 
 
-function game(){
-    for (let i = 1; i <=5; i++){
-        playerChoose = prompt("SELECT YOUR OPTION: (Rock, Paper, Scissors)");
-        console.log(playRound(playerChoose, getComputerChoice()));
-    }
-    
-}
+const you = document.querySelector("#you");
+const computer = document.querySelector("#computer");
+
+
+
+rockBtn.addEventListener('click', () => {
+    you.textContent = "You: Rock";
+    let computerChoise = getComputerChoice();
+    computer.textContent = "Computer: " + computerChoise;
+    result.textContent = playRound("rock", computerChoise);
+});
+
+paperBtn.addEventListener('click', () => {
+    you.textContent = "You: Paper";
+    let computerChoise = getComputerChoice();
+    computer.textContent = "Computer: " + computerChoise;
+    result.textContent = playRound("paper", computerChoise);
+});
+
+scissorsBtn.addEventListener('click', () => {
+    you.textContent = "You: Scissors";
+    let computerChoise = getComputerChoice();
+    computer.textContent = "Computer: " + computerChoise;
+    result.textContent = playRound("scissors", computerChoise);
+});
+
 
 function getComputerChoice(){
+
     return options[(Math.floor(Math.random() * options.length))];
 }
-
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
@@ -22,16 +48,27 @@ function playRound(playerSelection, computerSelection) {
         return "Draw, both choose " + playerSelection;
     }
     else if(playerSelection === "paper" && computerSelection === "rock"){
+        points += 1;
+        pointsText.textContent = "Points: " + points;
         return "You Win! paper beats rock";
+        
     }
     else if(playerSelection === "rock" && computerSelection === "scissors"){
+        points += 1;
+        pointsText.textContent = "Points: " + points;
         return "You Win! rock beats scissors";
+        
     }
     else if(playerSelection === "scissors" && computerSelection === "paper"){
+        points += 1;
+        pointsText.textContent = "Points: " + points;
         return "You Win! scissors beats paper";
+        
     }
     else{
         return "You Lose! " + computerSelection + " beats " + playerSelection;
     }
     
 }
+
+
