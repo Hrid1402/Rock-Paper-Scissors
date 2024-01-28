@@ -1,7 +1,7 @@
 const options = ["rock", "paper", "scissors"]
-game();
-console.log(getComputerChoice());
 let playerChoose = ""
+game();
+
 
 function game(){
     for (let i = 1; i <=5; i++){
