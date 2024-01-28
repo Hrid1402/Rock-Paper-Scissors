@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+#points{ 
+    margin-top:  15px;
+    font-family: 'Honk', system-ui;
+    font-size: 60px;
+}
+h1{
+    font-family: 'Honk', system-ui;
+    font-size: 120px;
+    margin-bottom: auto;
+}
+.rs{
+    margin: 20px;
+    font-size: 30px;
+    font-family: 'Fjalla One', sans-serif;
+    color: #321905;
+}
+#result{
+    margin-top: 30px;
+    font-size: 60px;
+    font-family: 'Fjalla One', sans-serif;
+    color: #321905;
+}
+body{
+    background-color: #fae155;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 40px;
+}
+
+.buttons ul li button{
+    background-color: #f0bd4f;
+    border-radius: 15px;
+    border: solid 6px #321905;
+    font-family: 'Honk', system-ui;
+    font-size: 80px;
+    padding: 10px 50px;
+}
